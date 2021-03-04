@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Access Request" max_length="40" name="x_58872_needit_access_request" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Urgency" max_length="40" name="u_choice_5" type="string">
+            <choice>
+                <element inactive_on_update="false" label="1 - Critical" sequence="0" value="1 - critical"/>
+                <element inactive_on_update="false" label="2 - Moderate" sequence="1" value="2 - moderate"/>
+                <element inactive_on_update="false" label="3 - Other" sequence="2" value="3 - other"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Model" max_length="40" name="u_choice_6" type="string">
+            <choice>
+                <element inactive_on_update="false" label="GE Box" sequence="0" value="ge box"/>
+                <element inactive_on_update="false" label="Drop Box" sequence="1" value="drop box"/>
+                <element inactive_on_update="false" label="GE Drive" sequence="2" value="ge drive"/>
+                <element inactive_on_update="false" label="Other" sequence="3" value="other"/>
+            </choice>
+        </element>
+        <element attributes="encode_utf8=false" label="Requested For" max_length="32" name="u_reference_1" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Requestor" max_length="32" name="u_reference_3" read_only="true" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Phone Number" max_length="40" name="u_string_7" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Complete Location Details" max_length="255" name="u_string_full_utf8_8" type="string_full_utf8"/>
+    </element>
+</database>
