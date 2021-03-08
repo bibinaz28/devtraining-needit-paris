@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element extends="task" label="Access Request" max_length="40" name="x_58872_needit_access_request" type="collection">
+    <element extends="task" label="Access Request" max_length="40" name="x_58872_needit_access_request" sizeclass="1" type="collection">
         <element label="Phone Number" max_length="40" name="phone_number" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Urgency" max_length="40" name="u_choice_3" type="string">
             <choice>
@@ -8,7 +8,7 @@
                 <element inactive_on_update="false" label="3 - Other" sequence="2" value="3 - other"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Priority" max_length="40" name="u_choice_4" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="u_choice_3" dependent_on_field="u_choice_3" label="Priority" max_length="40" name="u_choice_4" type="string" use_dependent_field="true">
             <choice>
                 <element inactive_on_update="false" label="High" sequence="0" value="high"/>
                 <element inactive_on_update="false" label="Medium" sequence="1" value="medium"/>
@@ -24,7 +24,7 @@
             </choice>
         </element>
         <element attributes="encode_utf8=false" label="Requestor" max_length="32" name="u_reference_1" reference="cmdb_ci_appl_dot_net" type="reference"/>
-        <element attributes="encode_utf8=false" label="Requested For" max_length="32" name="u_reference_2" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Requested For" max_length="32" name="u_reference_2" reference="sys_user" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Phone Number" max_length="40" name="u_string_6" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="New String (Full UTF-8)" max_length="255" name="u_string_full_utf8_7" type="string_full_utf8"/>
         <element attributes="edge_encryption_enabled=true" label="Complete Location Detail" max_length="255" name="u_string_full_utf8_8" type="string_full_utf8"/>
